@@ -14,11 +14,11 @@
 
 /* Atmospheric Purple Literary Themes */
 .theme-light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f3ecfb;
+  --bg-primary: #fbf8f3;
+  --bg-secondary: #f2ede4;
   --bg-card: #ffffff;
-  --text-primary: #000000;
-  --text-secondary: #222222;
+  --text-primary: #111111;
+  --text-secondary: #333333;
   --text-muted: #555555;
   --border-subtle: #e6daf3;
   --accent-purple: #9333ea;
@@ -28,13 +28,13 @@
 }
 
 .theme-dark {
-  --bg-primary: #0a0614;
-  --bg-secondary: #130c24;
-  --bg-card: #1c1033;
+  --bg-primary: #15092a;
+  --bg-secondary: #200d3d;
+  --bg-card: #28124d;
   --text-primary: #facc15;
   --text-secondary: #fde047;
   --text-muted: #eab308;
-  --border-subtle: #2d1c4f;
+  --border-subtle: #3c196d;
   --accent-purple: #c084fc;
   --accent-plum: #a855f7;
   --accent-rose: #f472b6;
@@ -55,11 +55,11 @@
   --accent-gold: #b45309;
 }
 
-/* 1. Day Mood: Pure White Background & Pure Black Text */
+/* 1. Day Mood: Soft Ivory Warm Paper Background & Crystal Clear Black Text */
 .theme-light,
 .theme-light body {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  background-color: #fbf8f3 !important; /* Warm Ivory Paper Background */
+  color: #111111 !important;
 }
 
 .theme-light h1,
@@ -77,13 +77,13 @@
 .theme-light .text-neutral-700,
 .theme-light .text-neutral-600,
 .theme-light .text-purple-600 {
-  color: #000000 !important;
+  color: #111111 !important; /* Deep Rich Black for high readability */
 }
 
-/* 2. Night Mood: Deep Background with Golden Yellow Text & Headlines */
+/* 2. Night Mood: Deep Royal Purple Background with Golden Yellow Text */
 .dark,
 .dark body {
-  background-color: #0e0a17 !important;
+  background-color: #15092a !important;
   color: #facc15 !important;
 }
 
@@ -102,7 +102,7 @@
 .dark .text-neutral-700,
 .dark .text-purple-100,
 .dark .text-purple-200 {
-  color: #facc15 !important; /* Rich Golden Yellow */
+  color: #facc15 !important;
   text-shadow: 0 1px 8px rgba(250, 204, 21, 0.25);
 }
 
@@ -127,7 +127,7 @@
 .theme-sepia .text-neutral-900,
 .theme-sepia .text-neutral-800,
 .theme-sepia .text-neutral-700 {
-  color: #b45309 !important; /* Deep Golden Amber */
+  color: #b45309 !important;
 }
 
 /* Bengali Reading Typography & Utilities */
@@ -144,6 +144,6 @@
 }
 
 ::selection {
-  background-color: rgba(250, 204, 21, 0.35);
+  background-color: rgba(147, 51, 234, 0.25);
   color: inherit;
 }
