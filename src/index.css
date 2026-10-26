@@ -14,12 +14,12 @@
 
 /* Atmospheric Purple Literary Themes */
 .theme-light {
-  --bg-primary: #faf7fd;
+  --bg-primary: #ffffff;
   --bg-secondary: #f3ecfb;
   --bg-card: #ffffff;
-  --text-primary: #1f122e;
-  --text-secondary: #58476e;
-  --text-muted: #7f6e96;
+  --text-primary: #000000;
+  --text-secondary: #222222;
+  --text-muted: #555555;
   --border-subtle: #e6daf3;
   --accent-purple: #9333ea;
   --accent-plum: #7e22ce;
@@ -57,11 +57,11 @@
 
 /* Eye-Soothing Long-Read Typography System (Prevents Eye Strain & Fatigue) */
 
-/* 1. Day Mood: Eye-Comfort Natural Matte Paper (Warm Ivory & Gentle Soft Charcoal) */
+/* 1. Day Mood: Pure White Background & Pure Black Text */
 .theme-light,
 .theme-light body {
-  background-color: #fbf8f3 !important;
-  color: #2b2724 !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .theme-light h1,
@@ -69,7 +69,7 @@
 .theme-light h3,
 .theme-light h4,
 .theme-light h5 {
-  color: #d97706 !important; /* Rich warm golden amber for light mode so it remains beautifully visible and golden */
+  color: #111111 !important; /* Rich deep dark for headings in light mode */
 }
 
 .theme-light p,
@@ -77,12 +77,12 @@
 .theme-light .text-neutral-900,
 .theme-light .text-neutral-800,
 .theme-light .text-neutral-700 {
-  color: #2b2724 !important;
+  color: #000000 !important; /* Pure Black for paragraphs and texts */
 }
 
 .theme-light .text-neutral-600,
 .theme-light .text-purple-600 {
-  color: #6e4e37 !important;
+  color: #222222 !important;
 }
 
 /* 2. Night Mood: Kindle Warm Night with Golden Yellow Headlines */
@@ -154,7 +154,7 @@
 }
 
 .theme-sepia .border-purple-200\/50,
-.theme-sepia .border-purple-200\/60,
+.theme-sepia .border-purple-200/60,
 .theme-sepia .border-purple-200,
 .theme-sepia .border-purple-300 {
   border-color: #e0d3be !important;
@@ -220,4 +220,3 @@
     opacity: 0.1;
   }
 }
-
