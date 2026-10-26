@@ -31,31 +31,31 @@
   --bg-primary: #0a0614;
   --bg-secondary: #130c24;
   --bg-card: #1c1033;
-  --text-primary: #f5f0ff;
-  --text-secondary: #c4b5e0;
-  --text-muted: #8572a6;
+  --text-primary: #facc15;
+  --text-secondary: #fde047;
+  --text-muted: #eab308;
   --border-subtle: #2d1c4f;
   --accent-purple: #c084fc;
   --accent-plum: #a855f7;
   --accent-rose: #f472b6;
-  --accent-gold: #e2ba4d;
+  --accent-gold: #facc15;
 }
 
 .theme-sepia {
   --bg-primary: #f7f1e6;
   --bg-secondary: #ece3d3;
   --bg-card: #faf5ea;
-  --text-primary: #2d1c10;
-  --text-secondary: #7a5135;
-  --text-muted: #8c6042;
+  --text-primary: #b45309;
+  --text-secondary: #d97706;
+  --text-muted: #92400e;
   --border-subtle: #decbb4;
   --accent-purple: #8b3a78;
   --accent-plum: #6f265e;
   --accent-rose: #a24b7a;
-  --accent-gold: #9d7318;
+  --accent-gold: #b45309;
 }
 
-/* 1. Day Mood: Pure White Background & Pure Black Text Force */
+/* 1. Day Mood: Pure White Background & Pure Black Text */
 .theme-light,
 .theme-light body {
   background-color: #ffffff !important;
@@ -80,54 +80,54 @@
   color: #000000 !important;
 }
 
-/* 2. Night Mood: Kindle Warm Night with Golden Yellow Headlines */
+/* 2. Night Mood: Deep Background with Golden Yellow Text & Headlines */
 .dark,
 .dark body {
   background-color: #0e0a17 !important;
-  color: #ede6da !important;
+  color: #facc15 !important;
 }
 
 .dark h1,
 .dark h2,
 .dark h3,
 .dark h4,
-.dark h5 {
-  color: #facc15 !important;
-  text-shadow: 0 1px 8px rgba(250, 204, 21, 0.25);
-}
-
+.dark h5,
 .dark p,
+.dark span,
+.dark a,
+.dark li,
 .dark .font-literary,
 .dark .text-neutral-900,
 .dark .text-neutral-800,
 .dark .text-neutral-700,
 .dark .text-purple-100,
 .dark .text-purple-200 {
-  color: #ede6da !important;
+  color: #facc15 !important; /* Rich Golden Yellow */
+  text-shadow: 0 1px 8px rgba(250, 204, 21, 0.25);
 }
 
-/* 3. Sepia Mood */
+/* 3. Sepia Mood: Warm Linen Background with Deep Golden/Amber Text */
 .theme-sepia,
 .theme-sepia body {
   background-color: #f6f0e4 !important;
-  color: #382618 !important;
+  color: #b45309 !important;
 }
 
 .theme-sepia h1, 
 .theme-sepia h2, 
 .theme-sepia h3, 
 .theme-sepia h4,
-.theme-sepia h5 {
-  color: #b45309 !important;
-}
-
+.theme-sepia h5,
 .theme-sepia p,
+.theme-sepia span,
+.theme-sepia a,
+.theme-sepia li,
 .theme-sepia .font-literary,
 .theme-sepia .font-editorial,
 .theme-sepia .text-neutral-900,
 .theme-sepia .text-neutral-800,
 .theme-sepia .text-neutral-700 {
-  color: #382618 !important;
+  color: #b45309 !important; /* Deep Golden Amber */
 }
 
 /* Bengali Reading Typography & Utilities */
@@ -144,6 +144,6 @@
 }
 
 ::selection {
-  background-color: rgba(168, 85, 247, 0.35);
+  background-color: rgba(250, 204, 21, 0.35);
   color: inherit;
 }
