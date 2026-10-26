@@ -65,7 +65,7 @@ function MainAppContent() {
     recordStoryRead
   } = useFollowersAndReaders();
 
-  // Theme Mode: Set default to 'light' for White background and Black text
+  // Theme Mode: Set default to 'light' (Warm Ivory Paper Background)
   const [theme, setTheme] = useState<ThemeMode>(() => {
     try {
       const stored = localStorage.getItem('nishat_theme');
@@ -73,7 +73,7 @@ function MainAppContent() {
     } catch {
       // Ignore
     }
-    return 'light'; // Clean White & Black by default
+    return 'light'; // Default Day Mood
   });
 
   // Rain and floating petals micro-particles toggle
@@ -117,7 +117,7 @@ function MainAppContent() {
     return cleanup;
   }, []);
 
-  // Sync theme with HTML document classes & strict Black text on White background
+  // Sync theme with HTML document classes & background styles
   useEffect(() => {
     try {
       localStorage.setItem('nishat_theme', theme);
@@ -130,16 +130,16 @@ function MainAppContent() {
 
     if (theme === 'dark') {
       root.classList.add('dark');
-      document.body.style.backgroundColor = '#0e0a17';
-      document.body.style.color = '#ede6da';
+      document.body.style.backgroundColor = '#15092a';
+      document.body.style.color = '#facc15';
     } else if (theme === 'sepia') {
       root.classList.add('theme-sepia');
-      document.body.style.backgroundColor = '#f6f0e4';
-      document.body.style.color = '#382618';
+      document.body.style.backgroundColor = '#f7f1e6';
+      document.body.style.color = '#b45309';
     } else {
       root.classList.add('theme-light');
-      document.body.style.backgroundColor = '#ffffff'; // Pure White Background
-      document.body.style.color = '#000000'; // Pure Black Text
+      document.body.style.backgroundColor = '#fbf8f3';
+      document.body.style.color = '#111111';
     }
   }, [theme]);
 
@@ -198,10 +198,10 @@ function MainAppContent() {
     <div
       className={`min-h-screen flex flex-col transition-colors duration-300 relative ${
         theme === 'dark'
-          ? 'bg-[#0e0a17] text-[#ede6da]'
+          ? 'bg-[#15092a] text-[#facc15]'
           : theme === 'sepia'
-          ? 'bg-[#f6f0e4] text-[#382618]'
-          : 'bg-white text-black'
+          ? 'bg-[#f7f1e6] text-[#b45309]'
+          : 'bg-[#fbf8f3] text-[#111111]'
       }`}
     >
       {/* Procedural Atmospheric Sky */}
