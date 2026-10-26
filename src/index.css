@@ -55,9 +55,7 @@
   --accent-gold: #9d7318;
 }
 
-/* Eye-Soothing Long-Read Typography System (Prevents Eye Strain & Fatigue) */
-
-/* 1. Day Mood: Pure White Background & Pure Black Text */
+/* 1. Day Mood: Pure White Background & Pure Black Text Force */
 .theme-light,
 .theme-light body {
   background-color: #ffffff !important;
@@ -68,21 +66,18 @@
 .theme-light h2,
 .theme-light h3,
 .theme-light h4,
-.theme-light h5 {
-  color: #111111 !important; /* Rich deep dark for headings in light mode */
-}
-
+.theme-light h5,
 .theme-light p,
+.theme-light span,
+.theme-light a,
+.theme-light li,
 .theme-light .font-literary,
 .theme-light .text-neutral-900,
 .theme-light .text-neutral-800,
-.theme-light .text-neutral-700 {
-  color: #000000 !important; /* Pure Black for paragraphs and texts */
-}
-
+.theme-light .text-neutral-700,
 .theme-light .text-neutral-600,
 .theme-light .text-purple-600 {
-  color: #222222 !important;
+  color: #000000 !important;
 }
 
 /* 2. Night Mood: Kindle Warm Night with Golden Yellow Headlines */
@@ -97,7 +92,7 @@
 .dark h3,
 .dark h4,
 .dark h5 {
-  color: #facc15 !important; /* Golden Yellow headlines */
+  color: #facc15 !important;
   text-shadow: 0 1px 8px rgba(250, 204, 21, 0.25);
 }
 
@@ -108,10 +103,10 @@
 .dark .text-neutral-700,
 .dark .text-purple-100,
 .dark .text-purple-200 {
-  color: #ede6da !important; /* Soft warm ivory, zero glare */
+  color: #ede6da !important;
 }
 
-/* 3. Sepia Mood: Golden Yellow Headlines on Warm Linen */
+/* 3. Sepia Mood */
 .theme-sepia,
 .theme-sepia body {
   background-color: #f6f0e4 !important;
@@ -123,14 +118,11 @@
 .theme-sepia h3, 
 .theme-sepia h4,
 .theme-sepia h5 {
-  color: #b45309 !important; /* Deep Golden Amber Yellow */
-}
-
-.theme-sepia .font-literary {
-  color: #382618 !important; /* Gentle reading cocoa chestnut */
+  color: #b45309 !important;
 }
 
 .theme-sepia p,
+.theme-sepia .font-literary,
 .theme-sepia .font-editorial,
 .theme-sepia .text-neutral-900,
 .theme-sepia .text-neutral-800,
@@ -138,45 +130,7 @@
   color: #382618 !important;
 }
 
-.theme-sepia .text-purple-600,
-.theme-sepia .text-purple-700,
-.theme-sepia .text-purple-800,
-.theme-sepia .text-purple-400,
-.theme-sepia .text-purple-500 {
-  color: #85654c !important;
-}
-
-.theme-sepia .bg-white\/80,
-.theme-sepia .bg-white\/90,
-.theme-sepia .bg-white,
-.theme-sepia .bg-white\/50 {
-  background-color: #faf5ea !important;
-}
-
-.theme-sepia .border-purple-200\/50,
-.theme-sepia .border-purple-200/60,
-.theme-sepia .border-purple-200,
-.theme-sepia .border-purple-300 {
-  border-color: #e0d3be !important;
-}
-
-/* Shimmering Purple & Violet Hairline Gradient */
-.rainbow-hairline {
-  background: linear-gradient(
-    90deg,
-    rgba(192, 132, 252, 0.7) 0%,
-    rgba(244, 114, 182, 0.7) 25%,
-    rgba(226, 186, 77, 0.7) 50%,
-    rgba(129, 140, 248, 0.7) 75%,
-    rgba(168, 85, 247, 0.7) 100%
-  );
-}
-
-.rainbow-glow:hover {
-  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.4);
-}
-
-/* Bengali Reading Typography */
+/* Bengali Reading Typography & Utilities */
 .font-literary {
   font-family: 'Noto Serif Bengali', 'Tiro Bangla', Georgia, serif;
 }
@@ -189,34 +143,7 @@
   font-family: 'Hind Siliguri', sans-serif;
 }
 
-/* Subtle Paper Texture Noise with Purple Atmospheric Dust */
-.paper-texture {
-  background-image: radial-gradient(rgba(147, 51, 234, 0.04) 1px, transparent 0);
-  background-size: 24px 24px;
-}
-
-.dark .paper-texture {
-  background-image: radial-gradient(rgba(192, 132, 252, 0.04) 1px, transparent 0);
-  background-size: 24px 24px;
-}
-
-/* Smooth reading text selection with purple glow */
 ::selection {
   background-color: rgba(168, 85, 247, 0.35);
   color: inherit;
-}
-
-@keyframes drift {
-  0% {
-    transform: translateX(-10%);
-    opacity: 0.15;
-  }
-  50% {
-    transform: translateX(100vw);
-    opacity: 0.35;
-  }
-  100% {
-    transform: translateX(115vw);
-    opacity: 0.1;
-  }
 }
