@@ -27,7 +27,7 @@ import { AtmosphericSky } from './components/AtmosphericSky';
 import { useFollowersAndReaders } from './hooks/useFollowersAndReaders';
 import { NOVELS, STORIES, SHORT_STORIES, LiteraryWork } from './data/literaryData';
 import { setupCopyrightProtection } from './utils/copyrightProtection';
-import { LanguageProvider, useLanguage } from './utils/languageContext';
+import { LanguageProvider } from './utils/languageContext';
 import { ReaderFolderModal } from './components/ReaderFolderModal';
 import { SendGiftModal } from './components/SendGiftModal';
 import { PratilipiImportModal } from './components/PratilipiImportModal';
@@ -117,7 +117,7 @@ function MainAppContent() {
     return cleanup;
   }, []);
 
-  // Sync theme with HTML document classes & background styles
+  // Sync theme with HTML document classes & direct body styles
   useEffect(() => {
     try {
       localStorage.setItem('nishat_theme', theme);
