@@ -1,0 +1,6 @@
+{
+  "name": "নিশাত আহমেদ — The Writer",
+  "description": "ভালোবাসার অন্য ভাষা — নিশাত আহমেদের ব্যক্তিগত সাহিত্য জগৎ, রোমান্টিক উপন্যাস, ছোটগল্প, কবিতা ও ছবি।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
