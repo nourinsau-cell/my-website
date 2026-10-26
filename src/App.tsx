@@ -65,7 +65,7 @@ function MainAppContent() {
     recordStoryRead
   } = useFollowersAndReaders();
 
-  // Theme Mode: Light / Dark / Sepia (Purple Governed Palette)
+  // Theme Mode: Set default to 'light' for White background and Black text
   const [theme, setTheme] = useState<ThemeMode>(() => {
     try {
       const stored = localStorage.getItem('nishat_theme');
@@ -73,7 +73,7 @@ function MainAppContent() {
     } catch {
       // Ignore
     }
-    return 'dark'; // Deep Velvet Purple Night by default
+    return 'light'; // Clean White & Black by default
   });
 
   // Rain and floating petals micro-particles toggle
@@ -95,7 +95,7 @@ function MainAppContent() {
   const [isStoryCommentModalOpen, setIsStoryCommentModalOpen] = useState(false);
   const [commentTargetWork, setCommentTargetWork] = useState<LiteraryWork | null>(null);
 
-  // Side drawer for Reader's Wall ("website er ekpashe customer ba reader jeno kichu post korte pare")
+  // Side drawer for Reader's Wall
   const [isReaderSideDrawerOpen, setIsReaderSideDrawerOpen] = useState(false);
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -117,7 +117,7 @@ function MainAppContent() {
     return cleanup;
   }, []);
 
-  // Sync theme with HTML document classes
+  // Sync theme with HTML document classes & strict Black text on White background
   useEffect(() => {
     try {
       localStorage.setItem('nishat_theme', theme);
@@ -138,8 +138,8 @@ function MainAppContent() {
       document.body.style.color = '#382618';
     } else {
       root.classList.add('theme-light');
-      document.body.style.backgroundColor = '#fbf8f3';
-      document.body.style.color = '#2b2724';
+      document.body.style.backgroundColor = '#ffffff'; // Pure White Background
+      document.body.style.color = '#000000'; // Pure Black Text
     }
   }, [theme]);
 
@@ -201,10 +201,10 @@ function MainAppContent() {
           ? 'bg-[#0e0a17] text-[#ede6da]'
           : theme === 'sepia'
           ? 'bg-[#f6f0e4] text-[#382618]'
-          : 'bg-[#fbf8f3] text-[#2b2724]'
+          : 'bg-white text-black'
       }`}
     >
-      {/* Procedural Atmospheric Sky: Drifting Clouds, Moonlight Glow in Night Mode, and Rain & Birds Ambient Sound */}
+      {/* Procedural Atmospheric Sky */}
       <AtmosphericSky theme={theme} />
 
       {/* Floating Follow Toast Feedback */}
@@ -282,7 +282,7 @@ function MainAppContent() {
         targetReaderName={chatTargetReader}
       />
 
-      {/* Top Bar Header with Follow button, AI, WhatsApp & Search Tools */}
+      {/* Top Bar Header */}
       {currentTab !== 'reader' && (
         <Header
           currentTab={currentTab}
@@ -303,14 +303,13 @@ function MainAppContent() {
         />
       )}
 
-      {/* "Continue Reading" memory banner (only on home tab) */}
+      {/* "Continue Reading" memory banner */}
       {currentTab === 'home' && (
         <ContinueReadingBanner onContinue={handleContinueReading} />
       )}
 
       {/* Main View Container */}
       <div className="flex-grow relative z-10">
-        {/* 1. Chapter Reader Full Experience */}
         {currentTab === 'reader' && activeWork && (
           <ChapterReader
             work={activeWork}
@@ -331,7 +330,6 @@ function MainAppContent() {
           />
         )}
 
-        {/* 2. Home Tab */}
         {currentTab === 'home' && (
           <HomeHero
             onStartReading={handleStartReading}
@@ -353,18 +351,16 @@ function MainAppContent() {
           />
         )}
 
-        {/* 3. Novels Tab (উপন্যাস / Novels) */}
         {currentTab === 'novels' && (
           <WorksGridView
             title="উপন্যাস · Novels"
-            subtitle="দীর্ঘ আখ্যান, বহমান জীবনের টানাপোড়েন এবং নিষিদ্ধ ভালোবাসার আত্ম-উন্মোচন।"
+            subtitle="দীর্ঘ আখ্যান, বহমান জীবনের টানাপোড়েন এবং নিষিদ্ধ ভালোবাসার আত্ম-উন্মোচন।"
             works={NOVELS}
             onRead={handleStartReading}
             onOpenComments={handleOpenCommentsModal}
           />
         )}
 
-        {/* 4. Stories Tab (গল্প / Stories) */}
         {currentTab === 'stories' && (
           <WorksGridView
             title="গল্প · Stories"
@@ -375,38 +371,32 @@ function MainAppContent() {
           />
         )}
 
-        {/* 5. Short Stories Tab (ছোট গল্প / Short Stories) */}
         {currentTab === 'short_stories' && (
           <WorksGridView
             title="ছোট গল্প · Short Stories"
-            subtitle="এক বসায় পড়ার মতো আবেগঘন গল্প, যা মনের ভেতর দীর্ঘস্থায়ী অনুরণন রেখে যায়।"
+            subtitle="এক বসায় পড়ার মতো আবেগঘন গল্প, যা মনের ভেতর দীর্ঘস্থায়ী অনুরণন রেখে যায়।"
             works={SHORT_STORIES}
             onRead={handleStartReading}
             onOpenComments={handleOpenCommentsModal}
           />
         )}
 
-        {/* 6. Poetry Tab (কবিতা / Poetry) */}
         {currentTab === 'poetry' && (
           <PoetryView onShareQuote={handleOpenQuoteGenerator} />
         )}
 
-        {/* 7. Photography Tab (ছবি / Photography) */}
         {currentTab === 'photography' && (
           <PhotographyView onShareQuote={handleOpenQuoteGenerator} />
         )}
 
-        {/* 8. Dedicated Reader's Board Tab (পাঠকের ডায়েরি ও দেয়াল · Reader's Board) */}
         {currentTab === 'reader_board' && (
           <ReaderBoard onShareWhatsApp={handleOpenWhatsApp} />
         )}
 
-        {/* 9. Thoughts Tab (ভাবনা / Thoughts) */}
         {currentTab === 'thoughts' && (
           <ThoughtsView onShareQuote={handleOpenQuoteGenerator} />
         )}
 
-        {/* 10. About Tab (লেখক সম্পর্কে / About) */}
         {currentTab === 'about' && (
           <AboutView
             isFollowing={isFollowing}
@@ -417,7 +407,7 @@ function MainAppContent() {
         )}
       </div>
 
-      {/* Floating Action Trigger on the right edge: Dedicated Reader Post Sidebar Drawer Button */}
+      {/* Floating Action Trigger on the right edge */}
       <div className="fixed top-1/2 -translate-y-1/2 right-0 z-40">
         <button
           onClick={() => setIsReaderSideDrawerOpen(true)}
@@ -433,12 +423,11 @@ function MainAppContent() {
       {isReaderSideDrawerOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs animate-in fade-in">
           <div className="w-full max-w-md bg-[#130b22] border-l border-purple-500/40 h-full overflow-y-auto shadow-2xl relative animate-in slide-in-from-right duration-300 text-neutral-100">
-            {/* Drawer top close bar */}
             <div className="sticky top-0 bg-[#170e28] p-4 border-b border-purple-900/60 flex items-center justify-between z-10">
               <div className="flex items-center gap-2">
                 <PenLine className="w-4 h-4 text-purple-400" />
                 <h3 className="font-editorial text-base font-bold text-white">
-                  পাঠকের দেয়াল · Reader&apos;s Wall
+                  পাঠকের দেয়াল · Reader&apos;s Wall
                 </h3>
               </div>
               <button
@@ -448,8 +437,6 @@ function MainAppContent() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-
-            {/* Reader Board content inside sidebar */}
             <ReaderBoard onShareWhatsApp={handleOpenWhatsApp} isSidebar={true} />
           </div>
         </div>
@@ -468,20 +455,18 @@ function MainAppContent() {
       </div>
 
       <div className="fixed bottom-5 right-5 z-30 font-ui flex items-center gap-2">
-        {/* Floating Reader-to-Reader Chat Trigger */}
         <button
           onClick={() => {
             setChatTargetReader('সহ-পাঠক');
             setIsReaderChatOpen(true);
           }}
           className="flex items-center gap-1.5 px-3 py-2.5 rounded-full bg-gradient-to-r from-purple-700 to-indigo-600 hover:opacity-95 text-white shadow-xl shadow-purple-950/40 border border-purple-400/40 transition-transform active:scale-95 text-xs font-semibold"
-          title="পাঠক চ্যাট ও বার্তা বিনিময় · Reader Chat"
+          title="পাঠক চ্যাট ও বার্তা বিনিময় · Reader Chat"
         >
           <MessageSquare className="w-3.5 h-3.5" />
           <span className="hidden sm:inline">পাঠক চ্যাট</span>
         </button>
 
-        {/* Floating WhatsApp Quick Share */}
         <button
           onClick={() => handleOpenWhatsApp()}
           className="p-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl shadow-emerald-950/40 border border-emerald-400/30 transition-transform active:scale-90"
@@ -491,7 +476,6 @@ function MainAppContent() {
           <MessageCircle className="w-5 h-5 fill-current" />
         </button>
 
-        {/* Floating AI Assistant Trigger */}
         <button
           onClick={() => setIsAiAssistantOpen(true)}
           className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-600 hover:opacity-95 text-white shadow-xl shadow-purple-950/50 border border-purple-400/40 transition-transform active:scale-95 font-medium text-xs"
@@ -502,7 +486,6 @@ function MainAppContent() {
         </button>
       </div>
 
-      {/* Footer with Dual-Language side-by-side */}
       {currentTab !== 'reader' && (
         <Footer
           onSelectTab={(tab) => {
